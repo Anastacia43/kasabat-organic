@@ -1,0 +1,22 @@
+h1{
+    color: green;
+    font-family: sans-serif;
+}
+
+ol{
+    list-style-type: circle;
+    list-style-image: url('images/pointer-icon.png');
+}
+ul{
+    list-style-type: upper-roman;
+}
+#menu-bar a{ 
+    text-decoration: none;
+    background-color:aquamarine;
+    padding: 5px;
+
+}
+#menu-bar a:hover{
+    background-color: aqua;
+    color:#ffffff;
+}
