@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Dating App with Selfie</title>
+    </head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to rihgt, #ff758c, #ff7eb3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 16 rgba(0,0,0,0.2);
+}
+
+video, canvas{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.btn {
+    background: #ff4e50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #ff6b6b;
+}
+    </style>
+<body>
+    <div class="app-container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <h2>hi, im you</h2>
+        <p>show your best side and start matching.</p>
+        <div class="buttons">
+            <button class="btn" onclick="takeSelfie()">Selfie</button>
+            <button class="btn">like</button>
+
+        </div>
+    </div>
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        //access webcam
+        navigator.mediaDevices.getUserMedia({video: true})
+        .then(stream=>{
+            video.srcObject = stream;
+        })
+        .catch(err =>{
+            console.error("camera access error:", err);
+            alert("Please allow camera access to take a selfie.");
+        });
+
+        function takeSelfie() {
+            canvas.style.display = 'block';
+            video.style.display = 'none';
+//Draw current video frame to canvas
+context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        }
+
+    </script>
+</body>
+
+</html>
