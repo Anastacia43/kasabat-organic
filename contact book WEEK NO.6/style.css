@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+ 
+body {font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+ #avatarImage{
+    margin-bottom: 20px;
+    text-align: center;
+
+ }
+ #editForm{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+ }
+
+ label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+ }
+
+ input[type="text"],
+ input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+ }
+
+ input[type="text"]:read-only{
+    background-color: #f1f1f1;
+
+ }
+
+ input[type="file"]:hidden {
+    display: none;
+ }
+
+ button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+ }
+
+ button:hover {
+    background-color: #0056b3;
+
+ }
+
+ button[type="button"] {
+    width: auto;
+    margin-right: 10px;
+
+ }
+
+ #homeLink {
+    background-color: #28a745;
+ }
+
+ #editContact {
+    background-color: #ffc107;
+ }
+ 
+ #deleteContact {
+    background-color: #dc3545;
+ }
+
+ button[type="button"]:hover {
+    opacity: 0.8;
+ }
+
+ button-container {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ br {
+    margin-top: 10px;
+ }
